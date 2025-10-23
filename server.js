@@ -4,7 +4,6 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -147,19 +146,17 @@ const products = [
         ]
     }
 ];
-
-// ⭐ API ROUTES
 app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
 app.get('/api/test', (req, res) => {
-    res.json({ message: 'Server is working! 🎉' });
+    res.json({ message: 'Server is working! ' });
 });
 
-// Start server
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📦 Products: http://localhost:${PORT}/api/products`);
-    console.log(`🧪 Test: http://localhost:${PORT}/api/test`);
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Products: http://localhost:${PORT}/api/products`);
+    console.log(`Test: http://localhost:${PORT}/api/test`);
 });
+
